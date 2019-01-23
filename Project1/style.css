@@ -3,15 +3,13 @@
     height: 500px;
 }
 
+/* Jumbotron */
+.jumbotron {
+    padding: 0;
+}
+
 
 /* Tables */
 .table {
-    margin-bottom: 0px;
-    line-height: 0.5;
-}
-
-.table td,
-.table th {
-    text-align: center; 
-    word-break: break-all;  
+    line-height: 0.3;
 }

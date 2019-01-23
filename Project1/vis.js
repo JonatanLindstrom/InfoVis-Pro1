@@ -1,28 +1,35 @@
 d3.csv('dataset.csv', function(data) {
-    var colorgen = d3.scale.ordinal()
-        .range(["#a6cee3","#1f78b4","#b2df8a","#33a02c",
-        "#fb9a99","#e31a1c","#fdbf6f","#ff7f00",
-        "#cab2d6","#6a3d9a","#ffff99","#b15928"]);
+    var colorScheme = d3.scale.linear()
+        .domain([0,8])
+        .range(['steelblue', 'brown'])
+        .interpolate(d3.interpolateLab);
 
-    var parcoords = d3.parcoords()("#vis")
+    var color = function(d) { return colorScheme(d['IVIS']); };
+
+    var parcoords = d3.parcoords()('#vis')
         .data(data)
-        .hideAxis(['Major', 'Degree', 'Interests', 'Goals'])
-        .alpha(0.2)
-        .composite("darken")
+        .hideAxis(['Namn', 'Major', 'Degree', 'Interests', 'Goals', 'Communication', 'Collab', 'Git'])
+        .color(color)
+        .alpha(0.3)
+        .composite('darken')
         .margin({ top: 24, left: 150, bottom: 12, right: 0 })
-        .mode("queue")
+        .mode('queue')
         .render()
         .reorderable()
-        .brushMode("1D-axes");
+        .brushMode('1D-axes')
 
     var table = d3.select('#list').append('table')
         .attr('class', 'table table-hover')
     var thead = table.append('thead')
     var tbody = table.append('tbody')
     
+    var columns = d3.keys(data[0])
+        columns.splice(1,5)
+        columns.splice(9,3)
+
     thead.append('tr')
         .selectAll('th')
-            .data(d3.keys(data[0]))
+            .data(columns)
             .enter()
         .append('th')
             .text(function(d) { return d; })
@@ -34,10 +41,11 @@ d3.csv('dataset.csv', function(data) {
         .on('mouseover', function(d,i) {
             parcoords.highlight([data[i]]);
         })
+        .on('mouseout', parcoords.unhighlight);
         
     var cells = rows.selectAll('td')
         .data(function(row) {
-            return d3.keys(data[0]).map(function (column) {
+            return columns.map(function (column) {
                 return { column: column, value: row[column] }
             })
         })
@@ -46,4 +54,8 @@ d3.csv('dataset.csv', function(data) {
             .attr('class', 'text-truncate')
             .attr('style', 'max-width: 150px')
             .text(function(d) { return d.value })
+
+    parcoords.on('brush', function(d) {
+        d3.select('#list table')
+    })
 })
