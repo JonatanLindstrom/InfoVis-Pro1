@@ -1,0 +1,17 @@
+/* Parallel coordinates */
+.parcoords {
+    height: 500px;
+}
+
+
+/* Tables */
+.table {
+    margin-bottom: 0px;
+    line-height: 0.5;
+}
+
+.table td,
+.table th {
+    text-align: center; 
+    word-break: break-all;  
+}
