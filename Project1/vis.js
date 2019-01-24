@@ -1,4 +1,10 @@
-d3.csv('dataset.csv', function(data) {
+d3.csv('dataset.csv', function(dataset) {
+    var data = d3.entries(dataset).map(function(d) {
+        var val = d.value;
+        val.key = d.key;
+        return val;
+    })
+
     var colorScheme = d3.scale.linear()
         .domain([0,8])
         .range(['steelblue', 'brown'])
@@ -24,7 +30,7 @@ d3.csv('dataset.csv', function(data) {
     var tbody = table.append('tbody')
     
     var columns = d3.keys(data[0])
-        columns.splice(1,5)
+        columns.splice(1,4)
         columns.splice(9,3)
 
     thead.append('tr')
@@ -38,10 +44,10 @@ d3.csv('dataset.csv', function(data) {
         .data(data)
         .enter()
         .append('tr')
-        .on('mouseover', function(d,i) {
-            parcoords.highlight([data[i]]);
+        .on({
+            'mouseover': function(d,i) { parcoords.highlight([data[i]]) },
+            'mouseout': parcoords.unhighlight
         })
-        .on('mouseout', parcoords.unhighlight);
         
     var cells = rows.selectAll('td')
         .data(function(row) {
@@ -55,7 +61,12 @@ d3.csv('dataset.csv', function(data) {
             .attr('style', 'max-width: 150px')
             .text(function(d) { return d.value })
 
-    parcoords.on('brush', function(d) {
-        d3.select('#list table')
+
+    parcoords.on('brush', function(items) {
+        var selected = items.map(function(d) { return d.key; })
+        tbody.selectAll('tr')
+            .attr('style', 'display: none')
+            .filter(function(d) { return selected.indexOf(d.key) > -1 })
+            .attr('style', 'null')
     })
 })
