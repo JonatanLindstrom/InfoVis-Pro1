@@ -1,15 +1,23 @@
-/* Parallel coordinates */
-.parcoords {
-    height: 500px;
-}
-
 /* Jumbotron */
 .jumbotron {
+    text-align: center;
     padding: 0;
 }
 
+/* Parallel coordinates */
+.parcoords {
+    height: 400px;
+}
 
 /* Tables */
+#tables {
+    text-align: center;
+}
+
 .table {
     line-height: 0.3;
+}
+
+.table tr .filtered {
+    display: none; 
 }

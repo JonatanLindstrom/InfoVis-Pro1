@@ -13,20 +13,27 @@
     </head>
 
     <body>
-        <div id="header" class="jumbotron">
-            <h2>Project 1</h2>
+        <div id="header" class="jumbotron jumbotron-fluid">
+            <h2>Project 1: Group Builder</h2>
         </div>
         <div class="container-fluid">
-            <div class="row">
-                <div id="vis" class="parcoords col-12"></div>
-                <div id="list" class="col-12"></div>
+            <div id="pc" class="row">
+                <div id="groupVis" class="parcoords col-md-6"></div>
+                <div id="vis" class="parcoords col-md-6"></div>
+            </div>
+            <div id="tables" class="row">
+                <div id="groupTable" class="col-md-6">
+                    <h4>Group members</h4>
+                </div>
+                <div id="classTable" class="col-md-6">
+                    <h4>All students</h4>
+                </div>
             </div>
         </div>
 
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
         <script src="https://d3js.org/d3.v3.min.js"></script>
         <script src="d3.parcoords.js"></script>
-        <script src="d3.divgrid.js"></script>
 		<script src="vis.js"></script>
     </body>
 </html>
