@@ -18,6 +18,30 @@
     line-height: 0.3;
 }
 
+.table td {
+    min-width: 275px;
+    vertical-align: center;
+}
+
 .table tr .filtered {
     display: none; 
 }
+
+
+/* Interest-badges */
+.badge { margin: 0px 2px; }
+
+.badgeSociety { background: #FF0000; }
+.badgeSocial {  background: #CC3300; }
+.badgeTravel {  background: #888800; }
+.badgePhoto {   background: #33CC00; }
+.badgeArt {     background: #00FF00; }
+.badgeMusic {   background: #00CC33; }
+.badgeFood {    background: #008888; }
+.badgeGym {     background: #0033CC; }
+.badgeSport {   background: #0000FF; }
+.badgeGaming {  background: #3300CC; }
+.badgeProg {    background: #880088; }
+.badgeIVIS {    background: #CC0033; }
+
+.badgeFood, .badgeGym, .badgeSport, .badgeGaming, .badgeProg { text-decoration: #FFFFFF; }
