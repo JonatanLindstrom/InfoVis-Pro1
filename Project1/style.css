@@ -4,10 +4,12 @@
     padding: 0;
 }
 
+
 /* Parallel coordinates */
 .parcoords {
     height: 400px;
 }
+
 
 /* Tables */
 #tables {

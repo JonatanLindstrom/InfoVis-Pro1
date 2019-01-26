@@ -41,6 +41,7 @@ d3.csv('dataset.csv', function(dataset) {
         .color(color)
         .alpha(0.4)
         .composite('darken')
+        .width(690)
         .margin({ top: 20, left: 20, bottom: 20, right: 10 })
         .mode('queue')
         .render()
