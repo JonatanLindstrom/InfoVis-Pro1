@@ -4,6 +4,27 @@
     padding: 0;
 }
 
+.row {
+    margin-bottom: 25px;
+}
+
+
+/* Progress bars */
+.progress {
+    height: 24px;
+    margin: 10px;
+}
+
+.progressLabel {
+    padding-top: 2px;
+    padding-left: 5px;
+    color: #FFFFFF;
+}
+
+#explanatoryProgBars {
+    margin-top: 15px;
+}
+
 
 /* Parallel coordinates */
 .parcoords {
@@ -20,9 +41,10 @@
     line-height: 0.3;
 }
 
-.table td {
+.table td,
+.table th {
     min-width: 275px;
-    vertical-align: center;
+    vertical-align: none;
 }
 
 .table tr .filtered {
@@ -33,17 +55,17 @@
 /* Interest-badges */
 .badge { margin: 0px 2px; }
 
-.badgeSociety { background: #FF0000; }
-.badgeSocial {  background: #CC3300; }
-.badgeTravel {  background: #888800; }
-.badgePhoto {   background: #33CC00; }
-.badgeArt {     background: #00FF00; }
-.badgeMusic {   background: #00CC33; }
-.badgeFood {    background: #008888; }
-.badgeGym {     background: #0033CC; }
-.badgeSport {   background: #0000FF; }
-.badgeGaming {  background: #3300CC; }
-.badgeProg {    background: #880088; }
-.badgeIVIS {    background: #CC0033; }
+.bgSociety { background: #FF0000; }
+.bgSocial {  background: #CC3300; }
+.bgTravel {  background: #888800; }
+.bgPhoto {   background: #33CC00; }
+.bgArt {     background: #00FF00; }
+.bgMusic {   background: #00CC33; }
+.bgFood {    background: #008888; }
+.bgGym {     background: #0033CC; }
+.bgSport {   background: #0000FF; }
+.bgGaming {  background: #3300CC; }
+.bgProg {    background: #880088; }
+.bgIVIS {    background: #CC0033; }
 
-.badgeFood, .badgeGym, .badgeSport, .badgeGaming, .badgeProg { text-decoration: #FFFFFF; }
+.bgFood, .bgGym, .bgSport, .bgGaming, .bgProg { text-decoration: #FFFFFF; }
