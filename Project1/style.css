@@ -6,6 +6,7 @@ body {
     background-image: linear-gradient(to bottom right, #e4efe9, #93a5cf);
 }
 
+
 /* Jumbotron */
 #header {
     text-align: center;
@@ -15,7 +16,6 @@ body {
 .row {
     margin-bottom: 25px;
 }
-
 
 
 /* Intro overlay */
@@ -56,7 +56,7 @@ body {
 
 /* Progress bars */
 .progress {
-    height: 24px;
+    height: 26px;
     margin: 10px;
 }
 
