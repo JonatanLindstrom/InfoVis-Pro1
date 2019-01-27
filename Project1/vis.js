@@ -27,9 +27,9 @@ d3.csv('dataset.csv', function(dataset) {
     var intro = d3.select('#overlay')
         intro.append('h1').text('Project 1: Group Builder')
         intro.append('h5').text('by Jonatan Lindström')
-        intro.append('p').text('Select students from the table with the help of the parallel coordinate graphics.\n' +
-                                'These students will be included in the left side table and calculations for group average comparison.\n' + 
-                                'With these tools, try to compensate for the groups´ weaknesses and get a group with similar interests whose average skillset are fair to the other students in the class.')
+        intro.append('p').html(`Select students from the table on the right-hand side with the help of the parallel coordinate graphics.
+                                Students selected will be included in the table on the left-hand side and in the calculations for comparing the group against the average student.
+                                With the tools given: try to compensate for the groups' weaknesses and get a group with similar interests whose average skill set are fair to the other students in the class.`)
         intro.append('p').text('(Click anywhere to begin)')
         intro.style('display', 'block')
         .on('click', function(d) { intro.style('display','none') })
@@ -90,7 +90,7 @@ d3.csv('dataset.csv', function(dataset) {
         .color(color)
         .alpha(0.4)
         .composite('darken')
-        .margin({ top: 20, left: 20, bottom: 10, right: 10 })
+        .margin({ top: 20, left: 20, bottom: 10, right: 25 })
         .mode('queue')
         .render()
         .reorderable()

@@ -34,6 +34,11 @@ body {
     text-align: center;
     color: #f8f9fa;
 }
+@media (max-width: 576px) {
+    #overlay h1 {
+        padding-top: 50px !important;
+    }
+}
 #overlay h1 {
     padding-top: 250px;
 }
@@ -75,11 +80,6 @@ body {
 /* Tables */
 #tables {
     text-align: center;
-}
-
-.table td,
-.table th {
-    min-width: 275px;
 }
 
 .table td {
