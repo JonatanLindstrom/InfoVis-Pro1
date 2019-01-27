@@ -23,6 +23,20 @@ d3.csv('dataset.csv', function(dataset) {
 
 
 
+    // Shows the intro to the website
+    var intro = d3.select('#overlay')
+        intro.append('h1').text('Project 1: Group Builder')
+        intro.append('h5').text('by Jonatan Lindström')
+        intro.append('p').text('Select students from the table with the help of the parallel coordinate graphics.\n' +
+                                'These students will be included in the left side table and calculations for group average comparison.\n' + 
+                                'With these tools, try to compensate for the groups´ weaknesses and get a group with similar interests whose average skillset are fair to the other students in the class.')
+        intro.append('p').text('(Click anywhere to begin)')
+        intro.style('display', 'block')
+        .on('click', function(d) { intro.style('display','none') })
+
+
+
+
 
     //Create progress bars
     var groupProgress = d3.select('#groupVis').style('text-align', 'center')
@@ -137,7 +151,7 @@ d3.csv('dataset.csv', function(dataset) {
                 progress.style('width', function(d) {
                     if (dataAvg[0][d] >= groupAvg[0][d]) {
                         return (groupAvg[0][d]*10).toFixed(0) + '%'; }
-                    else { return (dataAvg[0][d]*10).toFixed(0) + '%'; } })
+                    else { return (dataAvg[0][d]*10).toFixed(0) + '%'; }})
                 progressMissing.style('width', function(d) { 
                     if ((dataAvg[0][d] - groupAvg[0][d])*10 > 0) {
                         return ((dataAvg[0][d] - groupAvg[0][d])*10) + '%' }
@@ -268,7 +282,7 @@ d3.csv('dataset.csv', function(dataset) {
                 progress.style('width', function(d) { 
                     if (dataAvg[0][d] >= groupAvg[0][d]) {
                         return (groupAvg[0][d]*10).toFixed(0) + '%'; }
-                    else { return (dataAvg[0][d]*10).toFixed(0) + '%'; } })
+                    else { return (dataAvg[0][d]*10).toFixed(0) + '%'; }})
                 progressMissing.style('width', function(d) { 
                     if ((dataAvg[0][d] - groupAvg[0][d])*10 > 0) {
                         return ((dataAvg[0][d] - groupAvg[0][d])*10) + '%' }
@@ -277,6 +291,9 @@ d3.csv('dataset.csv', function(dataset) {
                     if ((groupAvg[0][d] - dataAvg[0][d])*10 > 0) {
                         return ((groupAvg[0][d] - dataAvg[0][d])*10) + '%' }
                     else { return 0; }})
+
+                console.log(groupAvg[0].Math)
+                console.log(dataAvg[0].Math)
             }
         })
         
