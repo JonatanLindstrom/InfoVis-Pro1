@@ -28,7 +28,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(2,2,2,0.85);
     z-index: 2;
     cursor: pointer;
     text-align: center;
@@ -37,6 +37,11 @@ body {
 @media (max-width: 576px) {
     #overlay h1 {
         padding-top: 50px !important;
+    }
+    #overlay p {
+        padding-top: 40px !important;
+        padding-left: 10% !important;
+        padding-right: 10% !important;
     }
 }
 #overlay h1 {
