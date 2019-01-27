@@ -1,7 +1,12 @@
+/* HTML, Body */
+body {
+    background-image: linear-gradient(to bottom right, #e4efe9, #93a5cf);
+}
+
 /* Jumbotron */
-.jumbotron {
+#header {
     text-align: center;
-    padding: 0;
+    padding: 10px 0px;
 }
 
 .row {
@@ -57,6 +62,9 @@
 /* Parallel coordinates */
 .parcoords {
     height: 400px;
+    -webkit-box-shadow: 10px 10px 35px -5px rgba(0,0,0,0.5);
+    -moz-box-shadow: 10px 10px 35px -5px rgba(0,0,0,0.5);
+    box-shadow: 10px 10px 35px -5px rgba(0,0,0,0.5);
 }
 
 
