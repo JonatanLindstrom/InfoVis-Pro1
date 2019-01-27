@@ -1,4 +1,7 @@
 /* HTML, Body */
+html {
+    background-image: linear-gradient(to right, #bccadc, #93a5cf);
+}
 body {
     background-image: linear-gradient(to bottom right, #e4efe9, #93a5cf);
 }
