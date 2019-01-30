@@ -290,9 +290,6 @@ d3.csv('dataset.csv', function(dataset) {
                     if ((groupAvg[0][d] - dataAvg[0][d])*10 > 0) {
                         return ((groupAvg[0][d] - dataAvg[0][d])*10) + '%' }
                     else { return 0; }})
-
-                console.log(groupAvg[0].Math)
-                console.log(dataAvg[0].Math)
             }
         })
         
